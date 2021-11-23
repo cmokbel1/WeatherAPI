@@ -26,8 +26,8 @@ const getCurrent = (cityName) => {
         // edit the top of the right-side container //
           $('#daily').text("")
           $('#daily').append(`
-
-      <p class="topLabel">${current.name}</p>
+          <p class="topLabel">${current.name}</p>
+          <img src="https://openweathermap.org/img/w/${current.weather[0].icon}.png"  alt="weather icon"><br>
        <span> Feels Like: ${current.main.feels_like} ºF</span><br>
        <span> Temperature: ${current.main.temp} ºF</span><br>
        <span> Wind Speed: ${current.wind.speed} MPH </span><br>
@@ -36,6 +36,18 @@ const getCurrent = (cityName) => {
       `)
       
       var uvi =sunspots.current.uvi
+          function changeColor() {
+            console.log(uvi)
+            if (uvi > 7) {
+              document.getElementById('uvi').style.backgroundColor = "red"
+            } else if (uvi > 5) {
+              document.getElementById('uvi').style.backgroundColor = "orange"
+            } else if (uvi > 2) {
+              document.getElementById('uvi').style.backgroundColor = "yellow"
+            } else {
+              document.getElementById('uvi').style.backgroundColor = "green"
+            }
+          }
           changeColor(uvi);
         })
 
@@ -46,18 +58,6 @@ const getCurrent = (cityName) => {
  })
 };
 
-function changeColor() {
-  console.log(uvi)
-  if (uvi > 7) {
-      document.getElementById('uvi').style.backgroundColor = "red"
-  } else if (uvi > 5 ) {
-      document.getElementById('uvi').style.backgroundColor = "orange"
-  } else if (uvi > 2) {
-      document.getElementById('uvi').style.backgroundColor = "yellow"
-  } else {
-      document.getElementById('uvi').style.backgroundColor = "green"
-  }
-}
 
 
 // API FORCAST QUERY FUNCTION //
