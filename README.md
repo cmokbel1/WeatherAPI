@@ -1,2 +1,12 @@
-# WeatherAPI
-Weather API for cities around the world!
+- # WeatherAPI
+- Weather API for cities around the world!
+- users can enter any city name and receive current weather as well as 5 day forecast
+- 3 spereate API queries provide the user with a wide array of information
+- selected information was based on assignment requirements 
+- also added information i personally wanted to display
+- html is designed with containers but most of the filled in information is done through js 
+- 5 day forecasts are displayed in an unordered list as cards
+- used bootstrap to stylize the css layout
+- also used axios to query the API's
+- -Deployed Site: https://cmokbel1.github.io/WeatherAPI/
+- ![image](https://user-images.githubusercontent.com/68614831/142988146-df1c02e5-db72-4223-bb99-dbdf3b5458c2.png)
