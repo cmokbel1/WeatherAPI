@@ -8,4 +8,5 @@
 - 5 day forecasts are displayed in an unordered list as cards
 - used bootstrap to stylize the css layout
 - also used axios to query the API's
+- -Deployed Site: https://cmokbel1.github.io/WeatherAPI/
 - ![image](https://user-images.githubusercontent.com/68614831/142988146-df1c02e5-db72-4223-bb99-dbdf3b5458c2.png)
