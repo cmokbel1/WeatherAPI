@@ -87,4 +87,14 @@ table {
 
 .form-label {
   font-size: x-large;
+  font-weight: bold;
+}
+
+.topLabel {
+  font-size:x-large;
+  font-weight: bold;
+}
+
+.daily {
+  border: 1px solid black;
 }

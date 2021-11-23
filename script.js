@@ -10,7 +10,7 @@ document.addEventListener('click', event => {
 //API CURRENT WEATHER DATA //
 const getCurrent = (cityName) => {
   //set fetch data for current weather //
-  var currentFetch = `api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`
+  var currentFetch = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`
   // fetch the URL //
   axios.get(`${currentFetch}`)
     .then(res => {
@@ -19,9 +19,21 @@ const getCurrent = (cityName) => {
       //log data to verify integrity //
       console.log(current)
       // edit the top of the right-side container //
-      document.getElementById('top').innerHTML = ``
-})
-}
+      $('#daily').text("")
+      $('#daily').append(`
+
+      <p class="topLabel">${current.name}</p>
+       <span> Feels Like: ${current.main.feels_like} ºF</span><br>
+       <span> Temperature: ${current.main.temp} ºF</span><br>
+       <span> Wind Speed: ${current.wind.speed} MPH </span><br>
+       <span> Humidity: ${current.main.humidity} %</span>
+      `)
+    })
+.catch((err) => {
+  alert(err)
+  return;
+ })
+};
 
 
 
@@ -42,7 +54,6 @@ const getCity = (cityName) => {
       //log data to verify integrity //
       console.log(city)
       // edit the top of the right-side container //
-      document.getElementById('top').innerHTML = `${city.city.name}`
       // edit the botton row of right-side container//
       document.getElementById('bottom').innerHTML = `
       <div class="daddy" style="display:flex">
@@ -56,19 +67,19 @@ const getCity = (cityName) => {
           ${city.list[0].weather[0].description}
         </li>
         <li class="card-text">
-          Humidity: ${city.list[0].main.humidity}
+          Humidity: ${city.list[0].main.humidity} %
         </li>
         <li class="card-text">
-          Temperature: ${city.list[0].main.temp}
+          Temperature: ${city.list[0].main.temp} ºF
         </li>
         <li class="card-text">
-          Minimum Temp: ${city.list[0].main.temp_min}
+          Minimum Temp: ${city.list[0].main.temp_min} ºF
         </li>
         <li class="card-text">
-          Maximum Temp: ${city.list[0].main.temp_max}
+          Maximum Temp: ${city.list[0].main.temp_max} ºF
         </li>
         <li class="card-text">
-          Wind Speed: ${city.list[0].wind.speed}
+          Wind Speed: ${city.list[0].wind.speed} MPH
         </li>
         </ul>
       </div>
@@ -83,19 +94,19 @@ const getCity = (cityName) => {
           <b>${city.list[8].weather[0].description}</b>
         </li>
         <li class="card-text">
-          Humidity: ${city.list[8].main.humidity}
+          Humidity: ${city.list[8].main.humidity} %
         </li>
         <li class="card-text">
-          Temperature: ${city.list[8].main.temp}
+          Temperature: ${city.list[8].main.temp} ºF
         </li>
         <li class="card-text">
-          Minimum Temp: ${city.list[8].main.temp_min}
+          Minimum Temp: ${city.list[8].main.temp_min} ºF
         </li>
         <li class="card-text">
-          Maximum Temp: ${city.list[8].main.temp_max}
+          Maximum Temp: ${city.list[8].main.temp_max} ºF
         </li>
         <li class="card-text">
-          Wind Speed: ${city.list[8].wind.speed}
+          Wind Speed: ${city.list[8].wind.speed} MPH
         </li>
         </ul>
       </div>
@@ -109,19 +120,19 @@ const getCity = (cityName) => {
           <b>${city.list[16].weather[0].description}</b>
         </li>
         <li class="card-text">
-          Humidity: ${city.list[16].main.humidity}
+          Humidity: ${city.list[16].main.humidity} %
         </li>
         <li class="card-text">
-          Temperature: ${city.list[16].main.temp}
+          Temperature: ${city.list[16].main.temp} ºF
         </li>
         <li class="card-text">
-          Minimum Temp: ${city.list[16].main.temp_min}
+          Minimum Temp: ${city.list[16].main.temp_min} ºF
         </li>
         <li class="card-text">
-          Maximum Temp: ${city.list[16].main.temp_max}
+          Maximum Temp: ${city.list[16].main.temp_max} ºF
         </li>
         <li class="card-text">
-          Wind Speed: ${city.list[16].wind.speed}
+          Wind Speed: ${city.list[16].wind.speed} MPH
         </li>
       </ul>
       </div>
@@ -136,19 +147,19 @@ const getCity = (cityName) => {
           <b>${city.list[24].weather[0].description}</b>
         </li>
         <li class="card-text">
-          Humidity: ${city.list[24].main.humidity}
+          Humidity: ${city.list[24].main.humidity} %
         </li>
         <li class="card-text">
-          Temperature: ${city.list[24].main.temp}
+          Temperature: ${city.list[24].main.temp} ºF
         </li>
         <li class="card-text">
-          Minimum Temp: ${city.list[24].main.temp_min}
+          Minimum Temp: ${city.list[24].main.temp_min} ºF
         </li>
         <li class="card-text">
-          Maximum Temp: ${city.list[24].main.temp_max}
+          Maximum Temp: ${city.list[24].main.temp_max} ºF
         </li>
         <li class="card-text">
-          Wind Speed: ${city.list[24].wind.speed}
+          Wind Speed: ${city.list[24].wind.speed} MPH
         </li>
         </ul>
       </div> 
@@ -162,19 +173,19 @@ const getCity = (cityName) => {
           <b>${city.list[32].weather[0].description}</b>
         </li>
         <li class="card-text">
-          Humidity: ${city.list[32].main.humidity}
+          Humidity: ${city.list[32].main.humidity} %
         </li>
         <li class="card-text">
-          Temperature: ${city.list[32].main.temp}
+          Temperature: ${city.list[32].main.temp} ºF
         </li>
         <li class="card-text">
-          Minimum Temp: ${city.list[32].main.temp_min}
+          Minimum Temp: ${city.list[32].main.temp_min} ºF
         </li>
         <li class="card-text">
-          Maximum Temp: ${city.list[32].main.temp_max}
+          Maximum Temp: ${city.list[32].main.temp_max} ºF
         </li>
         <li class="card-text">
-          Wind Speed: ${city.list[32].wind.speed}
+          Wind Speed: ${city.list[32].wind.speed} MPH
         </li>
         </ul>
      </div>
@@ -186,6 +197,7 @@ const getCity = (cityName) => {
   };
 
   searchEvents = [];
+  currentWeather =[];
  // SEARCH EVENT OCCURS //
   document.getElementById("searchButton").addEventListener("click", (event) => {
       event.preventDefault();
@@ -196,7 +208,7 @@ const getCity = (cityName) => {
     // stringify the search events and store//
     localStorage.setItem('location', JSON.stringify(searchEvents));
     // call API function //
-        getCurrent(cityName)
+        getCurrent(cityName);
         getCity(cityName);
       // reset input html //
       document.getElementById('input').value = ' ';
