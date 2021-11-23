@@ -12,32 +12,52 @@ const getCurrent = (cityName) => {
   //set fetch data for current weather //
   var currentFetch = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=imperial`
   // fetch the URL //
-  axios.get(`${currentFetch}`)
+  axios.get(currentFetch)
     .then(res => {
       // assign whole data set to variable //
       let current = res.data;
       //log data to verify integrity //
       console.log(current)
-      // edit the top of the right-side container //
-      $('#daily').text("")
-      $('#daily').append(`
+      var uviCall = `https://api.openweathermap.org/data/2.5/onecall?lat=${current.coord.lat}&lon=${current.coord.lon}&exclude="hourly,daily"&appid=${apiKey}`;
+      axios.get(uviCall)
+        .then(res => {
+          let sunspots = res.data;
+          console.log(sunspots)
+        // edit the top of the right-side container //
+          $('#daily').text("")
+          $('#daily').append(`
 
       <p class="topLabel">${current.name}</p>
        <span> Feels Like: ${current.main.feels_like} ºF</span><br>
        <span> Temperature: ${current.main.temp} ºF</span><br>
        <span> Wind Speed: ${current.wind.speed} MPH </span><br>
-       <span> Humidity: ${current.main.humidity} %</span>
+       <span> Humidity: ${current.main.humidity} %</span><br>
+        <span id="uvi"> Uvi: ${sunspots.current.uvi}</span >
       `)
+      
+      var uvi =sunspots.current.uvi
+          changeColor(uvi);
+        })
+
     })
-.catch((err) => {
+    .catch((err) => {
   alert(err)
   return;
  })
 };
 
-
-
-
+function changeColor() {
+  console.log(uvi)
+  if (uvi > 7) {
+      document.getElementById('uvi').style.backgroundColor = "red"
+  } else if (uvi > 5 ) {
+      document.getElementById('uvi').style.backgroundColor = "orange"
+  } else if (uvi > 2) {
+      document.getElementById('uvi').style.backgroundColor = "yellow"
+  } else {
+      document.getElementById('uvi').style.backgroundColor = "green"
+  }
+}
 
 
 // API FORCAST QUERY FUNCTION //
