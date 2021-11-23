@@ -1,3 +1,4 @@
+savedLoop();
 let apiKey = 'c361e4cd9ce2250893c154c7277e8eab';
 
 // CLICKING ON STORED DATA TO RE-RENDER THE HTML //
