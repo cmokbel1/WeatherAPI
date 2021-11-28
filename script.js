@@ -6,6 +6,7 @@ document.addEventListener('click', event => {
   if (event.target.className.split(' ')[0] === 'btn') {
   event.preventDefault()
   getCity(event.target.innerHTML)
+  getCurrent(event.target.innerHTML)
   }
 })
 //API CURRENT WEATHER DATA //
@@ -36,6 +37,7 @@ const getCurrent = (cityName) => {
         <span id="uvi"> Uvi: ${sunspots.current.uvi}</span >
       `)
       
+
       var uvi =sunspots.current.uvi
           function changeColor() {
             console.log(uvi)

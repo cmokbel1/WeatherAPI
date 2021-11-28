@@ -24,7 +24,9 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-
+* {
+  width: 100%;
+}
 .navbar-brand {
   font-size: xx-large;
   font-family: Arial, Helvetica, sans-serif;
