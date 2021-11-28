@@ -26,7 +26,9 @@ footer, header, hgroup, menu, nav, section {
 
 * {
   width: 100%;
+
 }
+
 .navbar-brand {
   font-size: xx-large;
   font-family: Arial, Helvetica, sans-serif;
@@ -36,6 +38,7 @@ body {
   line-height: 1;
   font-family: Helvetica, sans-serif;
   background-color: cornflowerblue;
+  width: 100%;
 }
 
 #input {
@@ -93,10 +96,15 @@ table {
 }
 
 .topLabel {
-  font-size:x-large;
+  font-size: x-large;
   font-weight: bold;
 }
 
 .daily {
   border: 1px solid black;
+
+}
+
+.bottom {
+ border: 1px solid black;
 }

@@ -79,7 +79,8 @@ const getCity = (cityName) => {
       // edit the top of the right-side container //
       // edit the botton row of right-side container//
       document.getElementById('bottom').innerHTML = `
-      <div class="daddy" style="display:flex">
+
+
         <div class="card" style="width: 11rem; display:inline-block">
         <ul>
           <li class="card-title">
@@ -106,6 +107,8 @@ const getCity = (cityName) => {
         </li>
         </ul>
       </div>
+     
+    
       <div class="card" style="width: 11rem; display:inline-block">
       <ul>
          <li class="card-title">
@@ -133,6 +136,8 @@ const getCity = (cityName) => {
         </li>
         </ul>
       </div>
+
+  
       <div class="card" style="width: 11rem; display:inline-block">
       <ul>
        <li class="card-title">
@@ -159,7 +164,8 @@ const getCity = (cityName) => {
         </li>
       </ul>
       </div>
-     
+ 
+
       <div class="card" style="width: 11rem; display:inline-block">
       <ul>
       <li class="card-title">
@@ -186,6 +192,8 @@ const getCity = (cityName) => {
         </li>
         </ul>
       </div> 
+  
+   
       <div class="card" style="width: 11rem; display:inline-block">
       <ul>
         <li class="card-title">
@@ -212,6 +220,7 @@ const getCity = (cityName) => {
         </li>
         </ul>
      </div>
+  
  </div>`
     }) .catch((err) => {
           alert("City Was Not Found");
