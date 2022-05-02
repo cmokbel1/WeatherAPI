@@ -1,7 +1,7 @@
 - # WeatherAPI
 - Weather API for cities around the world!
 - users can enter any city name and receive current weather as well as 5 day forecast
-- 3 spereate API queries provide the user with a wide array of information
+- 3 separate API queries provide the user with a wide array of information
 - selected information was based on assignment requirements 
 - also added information i personally wanted to display
 - html is designed with containers but most of the filled in information is done through js 
